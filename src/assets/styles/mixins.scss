@@ -1,0 +1,60 @@
+// General button colors
+@mixin btn-colors($color, $percentage, $text-color:#fff) {
+
+  &,
+  &:hover {
+    background-color: $color;
+    border-color: $color;
+    color: $text-color;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 10px rgba($color, .4);
+  }
+
+  &:focus,
+  &.focus {
+    color: $text-color;
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: $color;
+    border-color: $color;
+    opacity: 0.5;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    background-color: darken($color, $percentage);
+    border-color: darken($color, $percentage);
+    color: $text-color;
+  }
+
+}
+
+// Outline buttons
+@mixin btn-outline($color, $percentage, $text-color:#fff) {
+  color: $color;
+  background-color: transparent;
+
+  @if $color == #fff {
+    border-color: rgba($color, .5);
+  } @else {
+    border-color: $color;
+  }
+
+  &:hover {
+    color: $text-color;
+    background-color: $color;
+    border-color: $color;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    background-color: darken($color, $percentage);
+    border-color: darken($color, $percentage);
+  }
+}

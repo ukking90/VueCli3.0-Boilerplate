@@ -1,0 +1,9 @@
+p {
+  background: #ffbe00;
+  color: #ff0000;
+  font-size: 25px;
+}
+
+a {
+  @include btn-colors(#0f0, 30%, #3d3d3d)
+}
